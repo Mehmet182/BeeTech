@@ -1,0 +1,212 @@
+import 'dosya.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  //print("ilk işlem başarili olarak çaliştirildi...");
+
+  islem(selamlamaMetni, sayi);
+
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    String name = "mehmet";
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("HOME"),
+          actions: [
+            IconButton(
+              icon: Image.asset(
+                'varliklar/zil.png',
+                width: 27.5,
+                height: 27.5,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.notifications,
+                size: 27,
+                //width: 27.5,
+                //height: 27.5,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Image.asset(
+                'varliklar/bag1.jpg',
+                height: 32.5,
+                width: 32.5,
+              ),
+              onPressed: () {},
+            ),
+          ],
+        ),
+        body: Column(
+          children: [
+            const SizedBox(height: 24),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: "Search Anything...",
+                  prefixIcon: Image.asset(
+                    'varliklar/search.png',
+                    height: 25.5,
+                    width: 25.5,
+                  ),
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText:
+                      "Search Anything...", // search bar yazısı üst taraf kayıyor
+                  prefixIcon: Image.asset(
+                    'varliklar/search.png',
+                    height: 25.5,
+                    width: 25.5,
+                  ),
+                  border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      borderSide: BorderSide(
+                        color: Colors.blue,
+                        width: 50,
+                      )),
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                children: [
+                  Text(
+                    'Categories',
+                    style: TextStyle(
+                      color: Color(0xFF1F2937),
+                      fontSize: 14,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w600,
+                      height: 0.11,
+                      letterSpacing: 0.07,
+                    ),
+                  ),
+                  Spacer(),
+                  Text(
+                    'View All ->',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      color: Color(0xFF6B7280),
+                      fontSize: 12,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                      height: 0.12,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            // ekran kaydırma varsayılan aşağı yukarı
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      Image.asset('varliklar/fashion.png'),
+                      const Text("Fashion"),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('varliklar/Electronic.png'),
+                      const Text("Electroics"),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('varliklar/Application.png'),
+                      const Text("Appliences"),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('varliklar/Beauty.png'),
+                      const Text("Beauty"),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('varliklar/funny.jpeg'),
+                      const Text("Funny"),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('varliklar/fashion.png'),
+                      const Text("Fashion"),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('varliklar/Electronic.png'),
+                      const Text("Electroics"),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('varliklar/Application.png'),
+                      const Text("Appliences"),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('varliklar/Beauty.png'),
+                      const Text("Beauty"),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('varliklar/funny.jpeg'),
+                      const Text("Funny"),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Text(
+              'Hello, $name! How are you?',
+            ),
+            Text(
+              'Hello, $name! How are you?',
+            ),
+            Text(
+              'Hello, $name! How are you?',
+            ),
+            Text(
+              'Hello, $name! How are you?',
+            ),
+          ],
+        ),
+        drawer: const Drawer(),
+      ),
+    );
+  }
+}
+
+String selamlamaMetni = 'Merhaba Arkadaşlar ';
+int sayi = 5;
